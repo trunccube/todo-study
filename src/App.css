@@ -1,31 +1,115 @@
-.App {
+/* 通用样式 */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+/* 容器居中 */
+.container {
+  max-width: 600px; /* 你可以根据需要调整这个值 */
+  margin: 0 auto;
+}
+
+/* 深紫色 */
+.deepPurple {
+  border-color: #5b007a;
+  color: #5b007a; /* 使文本颜色为深紫色 */
+}
+
+/* 灰紫色 */
+.greyPurple {
+  border-color: #7a597b;
+}
+
+.infoBar, .checkbox, input[type="text"], button {
+  border-radius: 5px;
+}
+
+/* 输入框和按钮样式 */
+input[type="text"], button {
+  width: 100%; 
+  padding: 5px 10px;
+  margin-bottom: 20px;
+  border: 1px solid #5b007a;
+}
+
+button {
+  background-color: #5b007a;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 60px; /* 或您需要的任何其他宽度 */
+  text-align: center; /* 横向居中文本 */
+  margin-left: 20px; /* 添加左边距以与信息栏分开 */
+}
+
+button:hover {
+  background-color: #7a1dab;
+}
+
+/* 信息栏和选择框样式 */
+.infoBar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 100%; /* 使宽度一致 */
+  padding: 5px;
+  border: 1px solid #5b007a;
+  background-color: #f3f1f5;
+}
+
+.infoContent {
+  flex-grow: 1;
+  color: #5b007a;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #5b007a;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.infoBar.checked .infoContent {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.infoBar.checked .checkbox::before {
+  content: '✓';
+  display: block;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.infoBar.checked {
+  border-color: #595959; /* 当选中时变为灰紫色 */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.infoBar.checked .checkbox {
+  border-color: #595959; /* 当选中时变为灰紫色 */
+}
+
+.actionRow {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center; 
 }
 
-.App-link {
-  color: #61dafb;
+#contentArea {
+  flex-grow: 1;  /* 允许内容区域在可用空间中增长 */
+  display: flex;  /* 使其成为flex容器以确保新内容在此区域内正确显示 */
+  flex-direction: column;  
 }
 
-.heart {
-  color: #ff0000;
+.inputRow {
+  display: flex;
+  align-items: center; /* 垂直居中对齐内容 */
+  justify-content: space-between; /* 使元素均匀分布在容器中，从而将按钮推到右侧 */
+  margin-bottom: 20px; /* 根据需要添加间距 */
 }
 
-.small {
-  font-size: 0.75rem;
+.infoBar {
+  margin-bottom: 10px; /* 或者你需要的任何其他间距值 */
+  /* ...其他样式... */
 }
